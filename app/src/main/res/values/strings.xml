@@ -6,4 +6,8 @@
     <string name="view_reports_button_label">View your reports</string>
     <string name="view_all_reports_button_label">view_all_reports</string>
     <string name="report_button_label">Make a report</string>
+    <string name="first_name_hint">First Name</string>
+    <string name="last_name_hint">Last name</string>
+    <string name="personal_info_quirky_message">Who are you?</string>
+    <string name="profile_picture_access_hint">Profile picture</string>
 </resources>
