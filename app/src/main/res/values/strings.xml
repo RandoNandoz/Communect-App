@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Communect</string>
+    <string name="main_heading_inspirationalquote">Let\'s change something!</string>
+    <string name="main_title">Welcome to Communect!</string>
+    <string name="community_forum_button">Talk with your community</string>
+    <string name="view_reports_button_label">View your reports</string>
+    <string name="view_all_reports_button_label">view_all_reports</string>
+    <string name="report_button_label">Make a report</string>
+</resources>
