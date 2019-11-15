@@ -4,7 +4,7 @@
     <string name="main_title">Welcome to Communect!</string>
     <string name="community_forum_button">Talk with your community</string>
     <string name="view_reports_button_label">View your reports</string>
-    <string name="view_all_reports_button_label">view_all_reports</string>
+    <string name="view_all_reports_button_label">View all reports in your local area</string>
     <string name="report_button_label">Make a report</string>
     <string name="first_name_hint">First Name</string>
     <string name="last_name_hint">Last name</string>
