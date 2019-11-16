@@ -1,5 +1,6 @@
 package com.android.communect;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.widget.Toast;
@@ -19,10 +20,10 @@ public class Uploader {
     // idk what the hell im doing
     // private static final String filePath = "/image.png";
     private static FirebaseStorage storage = FirebaseStorage.getInstance();
-    // public FirebaseFirestore db = FirebaseFirestore.getInstance();
     public StorageReference storageReference = storage.getReference();
-    public void UploadDrawable(Drawable drawable) {
-        StorageReference ImageRef = storageReference.child("image.jpg");
+
+    public void UploadDrawable(Drawable drawable, final Context context) {
+        StorageReference ImageRef = storageReference.child(Random.RandomString() + ".jpg");
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         // OutputStream outputStream = new FileOutputStream(filePath);
         FileOperation.DrawableToBitmap(drawable).compress(Bitmap.CompressFormat.PNG, 100, baos);
@@ -32,8 +33,7 @@ public class Uploader {
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                MainActivity mainActivity = new MainActivity();
-                Toast.makeText(mainActivity.mActivityContext,e.toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(context, e.toString(), Toast.LENGTH_LONG).show();
             }}).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
