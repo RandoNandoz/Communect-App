@@ -11,6 +11,7 @@ public class FileOperation {
         return ((BitmapDrawable)Drawableimage).getBitmap();
     }
 
+
     // useless
     @Deprecated
     public static OutputStream BitmapToPNG(Bitmap bitmapImage, int quality, OutputStream outputStream) {

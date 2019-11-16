@@ -35,6 +35,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="188dp"
         android:text="@string/view_reports_button_label"
+        android:onClick="OpenNotification"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -122,5 +123,16 @@
         android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/first_name_edittext_launcher" />
+
+    <Button
+        android:id="@+id/display_notification"
+        android:layout_width="374dp"
+        android:layout_height="129dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/display_notification"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

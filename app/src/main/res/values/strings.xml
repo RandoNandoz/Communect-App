@@ -16,4 +16,8 @@
     <string name="upload_report_image_access_hint">Picture to upload</string>
     <string name="auto_set_location_hint_access">Automatically set your location using GPS</string>
     <string name="send_to_server_button_label">send</string>
+    <string name="contentDescriptionthumbnail">thumbnail</string>
+    <string name="Title_view_all_reports">Viewing all reports in your area</string>
+    <string name="display_notification">Button</string>
+    <string name="Channel_name">channel name</string>
 </resources>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_view_all_reports">
+
+    <TextView
+        android:id="@+id/report_description6"
+        android:layout_width="253dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/report_description7" />
+
+    <TextView
+        android:id="@+id/report_description7"
+        android:layout_width="253dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/report_description2" />
+
+    <ImageView
+        android:id="@+id/report_thumbnail1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/report_thumbnail"
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/contentDescriptionthumbnail" />
+
+    <ImageView
+        android:id="@+id/report_thumbnail2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/report_thumbnail1"
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/contentDescriptionthumbnail" />
+
+    <ImageView
+        android:id="@+id/report_thumbnail3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/report_thumbnail2"
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/contentDescriptionthumbnail" />
+
+    <TextView
+        android:id="@+id/report_description5"
+        android:layout_width="253dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/report_description6" />
+
+    <TextView
+        android:id="@+id/report_description9"
+        android:layout_width="253dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/report_description4" />
+
+    <TextView
+        android:id="@+id/report_description4"
+        android:layout_width="253dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/report_description5" />
+
+    <TextView
+        android:id="@+id/report_description8"
+        android:layout_width="253dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/report_description9" />
+
+    <TextView
+        android:id="@+id/view_all_reports_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/Title_view_all_reports"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/report_description2"
+        android:layout_width="253dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/report_description1" />
+
+    <ImageView
+        android:id="@+id/report_thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_all_reports_title"
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/contentDescriptionthumbnail" />
+
+    <TextView
+        android:id="@+id/report_description1"
+        android:layout_width="253dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_all_reports_title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
