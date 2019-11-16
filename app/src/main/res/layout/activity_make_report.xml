@@ -16,7 +16,8 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:importantForAutofill="no" />
+        android:importantForAutofill="no"
+        tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/detail_hint_TextView"
@@ -64,17 +65,24 @@
 
     <ImageView
         android:id="@+id/uploaded_report_image"
-        android:layout_width="354dp"
-        android:layout_height="249dp"
+        android:layout_width="348dp"
+        android:layout_height="188dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="13dp"
+        android:contentDescription="@string/upload_report_image_access_hint"
+        android:onClick="openGalleryToUpload"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_upload_svgrepo_com"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/location_make_report_hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/ic_upload_svgrepo_com"
-        android:contentDescription="@string/upload_report_image_access_hint" />
+        tools:srcCompat="@drawable/ic_upload_svgrepo_com" />
+
 
     <TextView
         android:id="@+id/report_picture_hint"
