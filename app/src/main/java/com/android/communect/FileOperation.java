@@ -4,13 +4,16 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 
+import java.io.OutputStream;
+
 public class FileOperation {
-    public static Bitmap DrawableToBitmap(Drawable image) {
-        return ((BitmapDrawable)image).getBitmap();
+    public static Bitmap DrawableToBitmap(Drawable Drawableimage) {
+        return ((BitmapDrawable)Drawableimage).getBitmap();
     }
 
-    //TODO: IMPLETEMENT THIS
-    public static void BitmapToType() {
-
+    //TODO: IMPLEMENT THIS
+    public static OutputStream BitmapToPNG(Bitmap bitmapImage, int quality, OutputStream outputStream) {
+        bitmapImage.compress(Bitmap.CompressFormat.PNG, quality, outputStream);
+        return outputStream;
     }
 }

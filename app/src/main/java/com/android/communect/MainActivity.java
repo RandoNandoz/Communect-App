@@ -1,5 +1,6 @@
 package com.android.communect;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText mLastNameEditText;
     public String FirstName;
     public String LastName;
+    public Context mActivityContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mFirstNameEditText = findViewById(R.id.first_name_edittext_launcher);
         mLastNameEditText = findViewById(R.id.last_name_edittext_launcher);
+        mActivityContext = getApplicationContext();
     }
 
     public void makeReport(View view) {

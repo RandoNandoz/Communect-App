@@ -38,7 +38,7 @@ public class MakeReport extends AppCompatActivity {
 
 
         //Detects request codes
-        if(requestCode==GET_FROM_GALLERY && resultCode == Activity.RESULT_OK) {
+        if(requestCode == GET_FROM_GALLERY && resultCode == Activity.RESULT_OK) {
             Uri selectedImage = data.getData();
             image = null;
             try {
@@ -52,4 +52,7 @@ public class MakeReport extends AppCompatActivity {
         }
     }
 
+    public void getGPSLocation(View view) {
+
+    }
 }
