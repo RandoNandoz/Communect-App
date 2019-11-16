@@ -66,11 +66,9 @@
         android:layout_width="wrap_content"
         android:layout_height="19dp"
         android:layout_marginTop="3dp"
-        android:layout_marginBottom="455dp"
         android:text="@string/main_heading_inspirationalquote"
         android:textSize="14sp"
         android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/make_a_report_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/app_main_title" />
@@ -81,10 +79,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
+        android:contentDescription="@string/profile_picture_access_hint"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_main_heading"
-        tools:srcCompat="@tools:sample/avatars"
-        android:contentDescription="@string/profile_picture_access_hint" />
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/textView4"
@@ -101,36 +99,28 @@
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="19dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="35dp"
-        android:layout_marginBottom="12dp"
         android:ems="10"
         android:hint="@string/first_name_hint"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/editText2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="34dp"
-        android:layout_marginBottom="152dp"
         android:ems="10"
         android:hint="@string/last_name_hint"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/view_reports_all_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
