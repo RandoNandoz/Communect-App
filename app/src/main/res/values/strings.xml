@@ -10,4 +10,9 @@
     <string name="last_name_hint">Last name</string>
     <string name="personal_info_quirky_message">Who are you?</string>
     <string name="profile_picture_access_hint">Profile picture</string>
+    <string name="detail_hint_label">What happened?</string>
+    <string name="make_report_location_hint_label">An approximate location of the report</string>
+    <string name="report_picture_hint">A picture of the report</string>
+    <string name="upload_report_image_access_hint">Picture to upload</string>
+    <string name="auto_set_location_hint_access">Automatically set your location using GPS</string>
 </resources>
