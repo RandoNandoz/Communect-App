@@ -33,6 +33,7 @@ public class activity_view_all_reports extends AppCompatActivity {
     public void refreshForReports(View view) {
         GetImages();
         MainActivity mainActivity = new MainActivity();
-        mTextViewReportUnderDescription.setText( mainActivity.FirstName + mainActivity.LastName + mainActivity.locatio);
+        MakeReport makeReport = new MakeReport();
+        mTextViewReportUnderDescription.setText(mainActivity.FirstName + mainActivity.LastName + makeReport.Latitude + makeReport.Longitude);
     }
 }

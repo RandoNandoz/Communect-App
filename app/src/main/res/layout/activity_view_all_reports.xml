@@ -118,7 +118,7 @@
         android:contentDescription="@string/contentDescriptionthumbnail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_all_reports_title"
-        tools:srcCompat="@drawable/MVIMG_20191116_153616" />
+        tools:srcCompat="@drawable/image" />
 
     <TextView
         android:id="@+id/report_description1"

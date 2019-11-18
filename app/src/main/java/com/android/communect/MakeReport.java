@@ -37,6 +37,8 @@ public class MakeReport extends AppCompatActivity {
     private ImageView mThumbnailImageView;
     private TextView mReportBody;
     private TextView mReportLocation;
+    public String Latitude;
+    public String Longitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,11 +106,11 @@ public class MakeReport extends AppCompatActivity {
                 // Log.d(null, "getGPSLocation:" + locationString);
                 double doubleLat = location.getLatitude();
                 double doubleLong = location.getLongitude();
-                String latitude = String.valueOf(doubleLat);
-                String longitude = String.valueOf(doubleLong);
+                Latitude = String.valueOf(doubleLat);
+                Longitude = String.valueOf(doubleLong);
                 // Its fine to concatenate in a setText, as in this case these values will always be
                 // numbers, so translation is impossible.
-                mReportLocation.setText(latitude + "," + " " + longitude);
+                mReportLocation.setText(Latitude + "," + " " + Longitude);
             }
         } catch (Exception e) {
             e.printStackTrace();
