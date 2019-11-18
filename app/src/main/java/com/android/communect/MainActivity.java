@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         mFirstNameEditText = findViewById(R.id.first_name_edittext_launcher);
         mLastNameEditText = findViewById(R.id.last_name_edittext_launcher);
         mActivityContext = getApplicationContext();
-        b1 = (Button)findViewById(R.id.view_your_reports_button);
+        b1 = findViewById(R.id.view_your_reports_button);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

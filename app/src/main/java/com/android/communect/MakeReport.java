@@ -11,6 +11,7 @@ import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -47,6 +49,7 @@ public class MakeReport extends AppCompatActivity {
         mThumbnailImageView = findViewById(R.id.uploaded_report_image);
         mReportBody = findViewById(R.id.make_report_description_toUpload);
         mReportLocation = findViewById(R.id.location_field);
+        GetGPSLocation();
     }
 
     public void openGalleryToUpload(View view) {
@@ -57,6 +60,7 @@ public class MakeReport extends AppCompatActivity {
         );
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.P)
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -79,6 +83,71 @@ public class MakeReport extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
     public void getGPSLocation(View view) {
+        LocationManager locationManager = (LocationManager) this.getSystemService(LOCATION_SERVICE);
+        Criteria criteria = new Criteria();
+        criteria.setAccuracy(Criteria.ACCURACY_FINE);
+        String bestProvider = "";
+        try {
+            assert locationManager != null;
+            bestProvider = locationManager.getBestProvider(criteria, true);
+            Log.w(null, "getGPSLocation: " + bestProvider);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG).show();
+        }
+        if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for Activity#requestPermissions for more details.
+            return;
+        }
+        try {
+            Location location = locationManager.getLastKnownLocation(bestProvider);
+            if (location != null) {
+                // String locationString = location.toString();
+                // Log.d(null, "getGPSLocation:" + locationString);
+                double doubleLat = location.getLatitude();
+                double doubleLong = location.getLongitude();
+                Latitude = String.valueOf(doubleLat);
+                Longitude = String.valueOf(doubleLong);
+                // Its fine to concatenate in a setText, as in this case these values will always be
+                // numbers, so translation is impossible.
+                mReportLocation.setText(Latitude + "," + " " + Longitude);
+                Log.w(null  , "getGPSLocation: " + Latitude + Longitude );
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void sendAllToServer(View view) {
+        Map<String, Object> Report = new HashMap<>();
+        MainActivity mainActivity = new MainActivity();
+        Report.put("Report body", mReportBody.getText().toString());
+        Report.put("Report Location", mReportLocation.getText().toString());
+        Report.put("Report User", mainActivity.FirstName + " " + mainActivity.LastName);
+        db.collection("Reports").add(Report).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                Log.d(null, "onSuccess: Document add success" + documentReference);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.w(null, "onFailure: error", e);
+            }
+        });
+        Uploader uploader = new Uploader();
+        uploader.UploadDrawable(image, getApplicationContext());
+        finish();
+        uploader.ListenForReport();
+    }
+
+    public void GetGPSLocation() {
+
         LocationManager locationManager = (LocationManager) this.getSystemService(LOCATION_SERVICE);
         Criteria criteria = new Criteria();
         criteria.setAccuracy(Criteria.ACCURACY_FINE);
@@ -117,28 +186,5 @@ public class MakeReport extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_LONG).show();
         }
 
-    }
-
-    public void sendAllToServer(View view) {
-        Map<String, Object> Report = new HashMap<>();
-        MainActivity mainActivity = new MainActivity();
-        Report.put("Report body", mReportBody.getText().toString());
-        Report.put("Report Location", mReportLocation.getText().toString());
-        Report.put("Report User", mainActivity.FirstName + " " + mainActivity.LastName);
-        db.collection("Reports").add(Report).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-            @Override
-            public void onSuccess(DocumentReference documentReference) {
-                Log.d(null, "onSuccess: Document add success" + documentReference);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.w(null, "onFailure: error", e);
-            }
-        });
-        Uploader uploader = new Uploader();
-        uploader.UploadDrawable(image, getApplicationContext());
-        finish();
-        uploader.ListenForReport();
     }
 }

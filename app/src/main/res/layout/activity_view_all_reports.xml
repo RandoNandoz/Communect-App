@@ -46,7 +46,6 @@
         android:contentDescription="@string/contentDescriptionthumbnail" />
 
     <ImageView
-        android:id="@+id/report_thumbnail3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -83,7 +82,6 @@
         app:layout_constraintTop_toBottomOf="@+id/report_description5" />
 
     <TextView
-        android:id="@+id/report_description8"
         android:layout_width="253dp"
         android:layout_height="43dp"
         android:layout_marginEnd="20dp"
@@ -105,6 +103,7 @@
         android:id="@+id/report_description_under1"
         android:layout_width="253dp"
         android:layout_height="43dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/report_description1" />
@@ -117,8 +116,7 @@
         android:layout_marginTop="4dp"
         android:contentDescription="@string/contentDescriptionthumbnail"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_all_reports_title"
-        tools:srcCompat="@drawable/image" />
+        app:layout_constraintTop_toBottomOf="@+id/view_all_reports_title" />
 
     <TextView
         android:id="@+id/report_description1"
@@ -130,7 +128,6 @@
         app:layout_constraintTop_toBottomOf="@+id/view_all_reports_title" />
 
     <Button
-        android:id="@+id/refresh_reports"
         android:layout_width="401dp"
         android:layout_height="130dp"
         android:layout_marginStart="8dp"

@@ -20,7 +20,6 @@
         tools:ignore="LabelFor" />
 
     <TextView
-        android:id="@+id/detail_hint_TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="34dp"
@@ -53,7 +52,6 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/auto_set_location"
         android:layout_width="111dp"
         android:layout_height="40dp"
         android:layout_marginEnd="84dp"
@@ -87,7 +85,6 @@
 
 
     <TextView
-        android:id="@+id/report_picture_hint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -97,7 +94,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/send_to_server"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"

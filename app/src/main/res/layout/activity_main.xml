@@ -7,7 +7,6 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/make_a_report_button"
         android:layout_width="184dp"
         android:layout_height="150dp"
         android:layout_marginStart="16dp"
@@ -18,7 +17,6 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/view_reports_all_button"
         android:layout_width="184dp"
         android:layout_height="150dp"
         android:layout_marginStart="208dp"
@@ -40,7 +38,6 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/community_forum_button"
         android:layout_width="184dp"
         android:layout_height="150dp"
         android:layout_marginStart="208dp"
@@ -125,7 +122,6 @@
         app:layout_constraintTop_toBottomOf="@+id/first_name_edittext_launcher" />
 
     <Button
-        android:id="@+id/display_notification"
         android:layout_width="374dp"
         android:layout_height="129dp"
         android:layout_marginStart="16dp"
