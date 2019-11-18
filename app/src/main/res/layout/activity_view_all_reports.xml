@@ -21,7 +21,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/report_description2" />
+        app:layout_constraintTop_toBottomOf="@+id/report_description_under1" />
 
     <ImageView
         android:id="@+id/report_thumbnail1"
@@ -102,7 +102,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/report_description2"
+        android:id="@+id/report_description_under1"
         android:layout_width="253dp"
         android:layout_height="43dp"
         android:layout_marginEnd="20dp"
@@ -111,14 +111,14 @@
 
     <ImageView
         android:id="@+id/report_thumbnail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="108dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/contentDescriptionthumbnail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_all_reports_title"
-        tools:srcCompat="@tools:sample/avatars"
-        android:contentDescription="@string/contentDescriptionthumbnail" />
+        tools:srcCompat="@drawable/MVIMG_20191116_153616" />
 
     <TextView
         android:id="@+id/report_description1"
@@ -128,5 +128,19 @@
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_all_reports_title" />
+
+    <Button
+        android:id="@+id/refresh_reports"
+        android:layout_width="401dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="8dp"
+        android:onClick="refreshForReports"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="1dp"
+        android:text="@string/refresh_reports_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 package com.android.communect;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -74,6 +75,7 @@ public class MakeReport extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     public void getGPSLocation(View view) {
         LocationManager locationManager = (LocationManager) this.getSystemService(LOCATION_SERVICE);
         Criteria criteria = new Criteria();
@@ -98,8 +100,15 @@ public class MakeReport extends AppCompatActivity {
         try {
             Location location = locationManager.getLastKnownLocation(bestProvider);
             if (location != null) {
-                String locationString = location.toString();
-                Log.d(null, "getGPSLocation:" + locationString);
+                // String locationString = location.toString();
+                // Log.d(null, "getGPSLocation:" + locationString);
+                double doubleLat = location.getLatitude();
+                double doubleLong = location.getLongitude();
+                String latitude = String.valueOf(doubleLat);
+                String longitude = String.valueOf(doubleLong);
+                // Its fine to concatenate in a setText, as in this case these values will always be
+                // numbers, so translation is impossible.
+                mReportLocation.setText(latitude + "," + " " + longitude);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -128,5 +137,6 @@ public class MakeReport extends AppCompatActivity {
         Uploader uploader = new Uploader();
         uploader.UploadDrawable(image, getApplicationContext());
         finish();
+        uploader.ListenForReport();
     }
 }

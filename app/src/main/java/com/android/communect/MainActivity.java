@@ -1,5 +1,6 @@
 package com.android.communect;
 
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -74,7 +75,8 @@ public class MainActivity extends AppCompatActivity {
                 new NotificationCompat.Builder(this)
                         .setSmallIcon(R.drawable.ic_launcher_background)
                         .setContentTitle("New report in your area")
-                        .setContentText("Litter report at 6339 arlington st.");
+                        .setContentText("Litter report at 6339 Arlington St.")
+                        .setPriority(Notification.PRIORITY_HIGH);
 
         Intent notificationIntent = new Intent(this, MainActivity.class);
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent,
