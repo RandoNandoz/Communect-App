@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "394517436096",
+    "firebase_url": "https://communect.firebaseio.com",
+    "project_id": "communect",
+    "storage_bucket": "communect.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394517436096:android:f6735017f03d69b629bf25",
+        "android_client_info": {
+          "package_name": "com.android.communect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394517436096-ipaukk8n1a4j3obud4d0lcjotghb2jpt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdce_ScLxg_FZtVg8bbQU8OPMnletchfw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "394517436096-ipaukk8n1a4j3obud4d0lcjotghb2jpt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
